@@ -1,0 +1,364 @@
+{
+    "questions":[
+        {
+            "id": 1,
+            "question": "Which character is known as the 'Man Out of Time'?",
+            "answer": "Captain America",
+            "options": ["Iron Man", "Captain America", "Hulk", "Thor"]
+        },
+        {
+            "id": 2,
+            "question": "Who is the God of Thunder?",
+            "answer": "Thor",
+            "options": ["Loki", "Black Panther", "Thor", "Wolverine"]
+        },
+        {
+            "id": 3,
+            "question": "Which character has a retractable adamantium skeleton?",
+            "answer": "Wolverine",
+            "options": ["Storm", "Doctor Strange", "Wolverine", "Cyclops"]
+        },
+        {
+            "id": 4,
+            "question": "Who is the web-slinging superhero from New York City?",
+            "answer": "Spider Man",
+            "options": ["Moon Knight", "Blade", "Spider-Man", "Daredevil"]
+        },
+        {
+            "id": 5,
+            "question": "Which character is known for her agility and stealth abilities?",
+            "answer": "Black Widow",
+            "options": ["Elektra", "Black Cat", "Medusa", "Black Widow"]
+        },
+        {
+            "id": 6,
+            "question": "Who is the Prince of Lies?",
+            "answer": "Loki",
+            "options": ["Loki", "Thanos", "Magneto", "Ultron"]
+        },
+        {
+            "id": 7,
+            "question": "Which character can control the weather?",
+            "answer": "Storm",
+            "options": ["Storm", "Jean Grey", "Ms. Marvel ", "Invisible Woman"]
+        },
+        {
+            "id": 8,
+            "question": "Who is the Sorcerer Supreme?",
+            "answer": "Doctor Strange",
+            "options": ["Doctor Strange", "Mordo", "Ancient One", "Silver Surfer"]
+        },
+        {
+            "id": 9,
+            "question": "Which character is known as the 'Star-Lord'?",
+            "answer": "Peter Quill",
+            "options": ["Peter Quill", "Rocket Raccoon", "Groot", "Drax"]
+        },
+        {
+            "id": 10,
+            "question": "Who is the king of Wakanda?",
+            "answer": "Black Panther",
+            "options": ["Black Panther", "Storm", "Luke Cage", "Falcon"]
+        },
+        {
+            "id": 11,
+            "question": "Which character can absorb and redirect energy?",
+            "answer": "Absorbing Man",
+            "options": ["Absorbing Man", "Hawkeye", "Punisher", "Ghost Rider"]
+        },
+        {
+            "id": 12,
+            "question": "Who is the ruler of Atlantis?",
+            "answer": "Namor",
+            "options": ["Namor", "Poseidon", "Loa", "Triton"]
+        },
+        {
+            "id": 13,
+            "question": "Which character can generate force fields?",
+            "answer": "Invisible Woman",
+            "options": ["Invisible Woman", "Spectrum", "Crystal", "Magneto"]
+        },
+        {
+            "id": 14,
+            "question": "Which character is known as the King of New York's criminal underworld?",
+            "answer": "Kingpin",
+            "options": ["Kingpin", "Hammerhead", "Tombstone", "Silvermane"]
+        },
+        {
+            "id": 15,
+            "question": "Which character can control fire?",
+            "answer": "Human Torch",
+            "options": ["Human Torch", "Firestar", "Pyro", "Jean Grey"]
+        },
+        {
+            "id": 16,
+            "question": "Who is the Master of Magnetism?",
+            "answer": "Magneto",
+            "options": ["Magneto", "Professor X", "Iceman", "Beast"]
+        },
+        {
+            "id": 17,
+            "question": "Which character can teleport?",
+            "answer": "Nightcrawler",
+            "options": ["Nightcrawler", "Blink", "Deadpool", "Shadowcat"]
+        },
+        {
+            "id": 18,
+            "question": "Who is the web-slinger's alter ego?",
+            "answer": "Peter Parker",
+            "options": ["Peter Parker", "Bruce Banner", "Tony Stark", "Steve Rogers"]
+        },
+        {
+            "id": 19,
+            "question": "Which character is known for her ability to manipulate reality?",
+            "answer": "Scarlet Witch",
+            "options": ["Scarlet Witch", "Jean Grey", "Rogue", "Jubilee"]
+        },
+        {
+            "id": 20,
+            "question": "Who wields the power Cosmic Cube?",
+            "answer": "Red Skull",
+            "options": ["Red Skull", "Thanos", "Ultron", "Loki"]
+        },
+        {
+            "id": 21,
+            "question": "Which character can stretch his body like rubber?",
+            "answer": "Mr. Fantastic",
+            "options": ["Mr. Fantastic", "Ultron", "Yondu", "Thing"]
+        },
+        {
+            "id": 22,
+            "question": "Who is the space pirate who becomes a member of the Guardians of the Galaxy?",
+            "answer": "Yondu",
+            "options": ["Yondu", "Starfox", "Adam Warlock", "Gamora"]
+        },
+        {
+            "id": 23,
+            "question": "Which character is known as the 'Kingpin of Crime'?",
+            "answer": "Wilson Fisk",
+            "options": ["Wilson Fisk", "Otto Octavius", "Mysterio", "Magneto"]
+        },
+        {
+            "id": 24,
+            "question": "Who is the leader of HYDRA?",
+            "answer": "Red Skull",
+            "options": ["Red Skull", "Nick Fury", "Thanos", "Loki"]
+        },
+        {
+            "id": 25,
+            "question": "Which character can turn into a giant green rage monster?",
+            "answer": "Hulk",
+            "options": ["Hulk", "Thing", "Groot", "Colossus"]
+        },
+        {
+            "id": 26,
+            "question": "Who is the first Avenger?",
+            "answer": "Captain America",
+            "options": ["Captain America", "Iron Man", "Thor", "Hulk"]
+        },
+        {
+            "id": 27,
+            "question": "Which character is known for his healing factor?",
+            "answer": "Wolverine",
+            "options": ["Wolverine", "Deadpool", "Colossus", "Cyclops"]
+        },
+        {
+            "id": 28,
+            "question": "Who is the alien symbiote that bonds with Eddie Brock?",
+            "answer": "Venom",
+            "options": ["Venom ", "Carnage", "Toxin", "Groot"]
+        },
+        {
+            "id": 29,
+            "question": "Which character is known as the 'Man Without Fear'?",
+            "answer": "Daredevil",
+            "options": ["Daredevil", "Spider-Man", "Hawkeye", "Black Panther"]
+        },
+        {
+            "id": 30,
+            "question": "Who is the symbiote host known for his sonic screams?",
+            "answer": "Scream",
+            "options": ["Scream", "Carnage", "Venom", "Toxin"]
+        },
+        {
+            "id": 31,
+            "question": "Which character is known for his time-traveling adventures?",
+            "answer": "Cable",
+            "options": ["Wolverine", "Cable", "Doctor Strange", "Iron Man"]
+        },
+        {
+            "id": 32,
+            "question": "Which character transforms into a powerful feline warrior?",
+            "answer": "Black Cat",
+            "options": ["Moon Knight", "Werewolf by Night", "Black Cat", "Black Panther"]
+        },
+        {
+            "id": 33,
+            "question": "Who can shoot energy blasts from his eyes?",
+            "answer": "Cyclops",
+            "options": ["Starfox", "Blindspot", "Optic", "Cyclops"]
+        },
+        {
+            "id": 34,
+            "question": "Which character can control minds with his telepathic powers?",
+            "answer": "Professor X",
+            "options": ["Doctor Strange", "Professor X", "Magneto", "Thanos"]
+        },
+        {
+            "id": 35,
+            "question": "Which character is Tony Stark's best friend and War Machine?",
+            "answer": "James Rhodes",
+            "options": ["Happy Hogan", "Nick Fury", "Phil Coulson", "James Rhodes"]
+        },
+        {
+            "id": 36,
+            "question": "Who is the queen of the Inhumans?",
+            "answer": "Medusa",
+            "options": ["Crystal", "Medusa", "Wasp", "Jubilee"]
+        },
+        {
+            "id": 37,
+            "question": "Which character can transform into a large beast?",
+            "answer": "Beast",
+            "options": ["Thing", "Hulk", "Beast", "Colossus"]
+        },
+        {
+            "id": 38,
+            "question": "Who can travel through time and space?",
+            "answer": "Doctor Strange",
+            "options": ["Thanos", "Doctor Strange", "Moon Knight", "Red Skull"]
+        },
+        {
+            "id": 39,
+            "question": "Which character can shrink to the size of an ant?",
+            "answer": "Ant-Man",
+            "options": ["Wasp", "Spider-Man", "Ant-Man", "Black Panther"]
+        },
+        {
+            "id": 40,
+            "question": "Who is the adoptive father of Mantis?",
+            "answer": "Ego",
+            "options": ["Drax", "Ego", "Nightcrawler", "Yondu"]
+        },
+        {
+            "id": 41,
+            "question": "Which character is known as the Living Vampire?",
+            "answer": "Morbius",
+            "options": ["Morbius", "Blade", "Dracula", "Daredevil"]
+        },
+        {
+            "id": 42,
+            "question": "Who is the leader of the Defenders?",
+            "answer": "Doctor Strange",
+            "options": [ "Daredevil", "Luke Cage", "Doctor Strange", "Iron Man"]
+        },
+        {
+            "id": 43,
+            "question": "Who is the God of Mischief?",
+            "answer": "Loki",
+            "options": ["Thor", "Loki", "Odin", "Hades"]
+        },
+        {
+            "id": 44,
+            "question": "Which character is the King of the Dead?",
+            "answer": "Black Panther",
+            "options": ["Ghost Rider", "Moon Knight", "Black Panther", "Blade"]
+        },
+        {
+            "id": 45,
+            "question": "Who is the mutant with superhuman strength and invulnerability?",
+            "answer": "Colossus",
+            "options": ["Hulk", "Thing", "Captain America", "Colossus"]
+        },
+        {
+            "id": 46,
+            "question": "Which character is known as the 'Master Assassin'?",
+            "answer": "Elektra",
+            "options": ["Black Widow", "Elektra", "Deadpool", "Moon Knight"]
+        },
+        {
+            "id": 47,
+            "question": "Who is the mutant with the power to manipulate probability?",
+            "answer": "Longshot",
+            "options": ["Storm", "Longshot", "Wolverine", "Cyclops"]
+        },
+        {
+            "id": 48,
+            "question": "Which character is known as the 'Prince of Power'?",
+            "answer": "Black Bolt",
+            "options": ["Medusa", "Black Bolt", "Gorgon", "Karnak"]
+        },
+        {
+            "id": 49,
+            "question": "Who is the Asgardian god of war?",
+            "answer": "Balder",
+            "options": ["Balder", "Thor", "Hercules", "Red Skull"]
+        },
+        {
+            "id": 50,
+            "question": "Which character is known for his speed?",
+            "answer": "Quicksilver",
+            "options": [ "Mercury", "Quicksilver", "Speed", "Thor"]
+        },
+        {
+            "id": 51,
+            "question": "Which character can create multiple copies of himself?",
+            "answer": "Multiple Man",
+            "options": ["Chameleon", "Multiple Man", "Mysterio", "Mystique"]
+        },
+        {
+            "id": 52,
+            "question": "Which character is known as the 'Master of Kung Fu'?",
+            "answer": "Shang-Chi",
+            "options": ["Elektra", "Deadpool", "Shang-Chi", "Ares"]
+        },
+        {
+            "id": 53,
+            "question": "Who is the former sidekick of Captain America?",
+            "answer": "Bucky Barnes",
+            "options": ["Sam Wilson", "Rick Jones", "Jim Morita", "Bucky Barnes"]
+        },
+        {
+            "id": 54,
+            "question": "Which character is known as the 'God of War'?",
+            "answer": "Ares",
+            "options": ["Thor", "Ares", "Hercules", "Zeus"]
+        },
+        {
+            "id": 55,
+            "question": "Who is the guardian of Knowhere?",
+            "answer": "Rocket Raccoon",
+            "options": ["Drax", "Groot", "Rocket Raccoon", "Gamora"]
+        },
+        {
+            "id": 56,
+            "question": "Which character is known as the 'Silver Surfer'?",
+            "answer": "Silver Surfer",
+            "options": ["Nova", "Drax", "Silver Surfer", "Galactus"]
+        },
+        {
+            "id": 57,
+            "question": "Who is the husband of Jessica Jones?",
+            "answer": "Luke Cage",
+            "options": ["Daredevil", "Luke Cage", "Iron Man", "Punisher"]
+        },
+        {
+            "id": 58,
+            "question": "Which character is known as the Merc with a Mouth?",
+            "answer": "Deadpool",
+            "options": ["Punisher", "Moon Knight", "Blade", "Deadpool"]
+        },
+        {
+            "id": 59,
+            "question": "Who is the daughter of Thanos?",
+            "answer": "Gamora",
+            "options": ["Nebula", "Mantis", "Black Widow", "Gamora"]
+        },
+        {
+            "id": 60,
+            "question": "Which character is known for his leadership of the X-Men?",
+            "answer": "Professor X",
+            "options": ["Magneto", "Beast", "Iceman", "Professor X"]
+        }
+    ]
+}
