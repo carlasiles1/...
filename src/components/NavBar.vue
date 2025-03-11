@@ -16,16 +16,17 @@ import { RouterLink } from 'vue-router';
 </script>
 
 <style scoped>
-/* Contenedor general */
+/* General container */
 .navbar {
   width: 100%;
   z-index: 1000;
   background-image: transparent;
   padding: 15px 0;
   position: fixed;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-/* Barra de navegación */
+/* Navigation bar*/
 .navbar__nav {
   display: flex;
   justify-content: center;
@@ -34,14 +35,14 @@ import { RouterLink } from 'vue-router';
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Sombra sutil debajo */
 }
 
-/* Lista de navegación */
+/* Navegation list */
 .navbar__list {
   list-style: none;
   display: flex;
   gap: 100px;
 }
 
-/* Estilo de los enlaces */
+/* Navegation Links */
 .navbar__list-item {
   text-transform: uppercase;
 }

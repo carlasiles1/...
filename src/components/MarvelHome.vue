@@ -10,7 +10,7 @@ main{
   /* max-width: fit-content; */
   /* overflow-x: scroll; /* Scroll solo horizontal */
   /*overflow-y: hidden; Oculta el scroll vertical */
-  scroll-behavior: smooth; /* Suaviza el scroll */
+  /* scroll-behavior: smooth; Suaviza el scroll */
   width: fit-content;
   height: 100vh; /* Evita que se extienda hacia abajo */
   white-space: nowrap; /* Evita que los elementos se vayan hacia abajo */
@@ -34,6 +34,7 @@ main::-webkit-scrollbar {
   position: absolute;
   left: 110rem;
   z-index: -1;
+  display: none; /* para hacer desaparecer el martillo */
 }
 
 .animation-hammer{
@@ -87,12 +88,16 @@ main::-webkit-scrollbar {
 .gif-arrows{
   
   position: fixed;
-  bottom: 6.5rem;
-  right: 70%;
+  bottom: 5rem;
+  right: 15rem;
   align-self:first baseline;
+  color: whitesmoke;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   
+  line-height: 0;
  /* mix-blend-mode: multiply;  */
-  animation: fadein 4s ease-in alternate infinite;
+  /* animation: fadein 4s ease-in alternate infinite; */
+  opacity:70%;
 }
 
 @keyframes fadein {
@@ -124,9 +129,13 @@ main::-webkit-scrollbar {
   right: 12rem;
   align-self:first baseline;
   z-index: 12;
-  
-
 }  
+
+@media only screen and (max-width: 1000px) {
+.gif-arrows{
+  display: none;
+}
+}
 
 </style>
 
@@ -134,7 +143,7 @@ main::-webkit-scrollbar {
   <main>
     <img src="@/assets/img/logoTimeline.png" alt="Marvel Logo" :class="['logo', {'animation-move': isdo}]" v-on:click="flyHammer">
     <img src="@/assets/img/thorHammer.png" alt="Thor Hammer moving" :class="['hammer', {'animation-hammer': isdo}]">
-    <img src= "@/assets/img/arrow-keys.gif" alt="keyboard_arrows" class="gif-arrows" v-show="showArrows">
+    <div class="gif-arrows" v-show="showArrows"><img src= "@/assets/img/arrow-keys.gif" alt="keyboard_arrows" width="150px"><p class="gif-arrows_texto">Use the keyboard or arrow buttons to navigate the timeline</p></div>
 
   </main>
 
@@ -167,6 +176,8 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener("keydown", handleKeyScroll);
 });
+
+
 
 
 </script>

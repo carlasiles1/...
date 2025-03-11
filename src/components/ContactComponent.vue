@@ -132,6 +132,7 @@ onMounted(fetchMarvelCharacters);
   align-items: center;
   height: 100vh;
   margin: -0.5rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .main__container {
