@@ -11,14 +11,14 @@
     .button{
         position: absolute;
         bottom: 10rem;
-        left: 12rem;
+        left: 7rem;
         color: rgb(206, 178, 21);
         font-size: 1.5rem;
         text-align: center;
         z-index: 11;
     }
     .button img{
-        width: 5rem;
+        width: 4rem;
         cursor: pointer;
     }
 </style>

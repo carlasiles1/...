@@ -29,9 +29,10 @@
 }
 
 .scoreboard__item {
-  margin: 1rem auto;
+  margin: 1rem 3rem 1rem 0;
   width: 21rem;
   color: wheat;
+  font-size: 1.8rem;
 }
 
 .scoreboard__item::marker {
@@ -46,7 +47,7 @@
 }
 
 .scoreboard__item--last {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   width: 50%;
   margin: 1rem auto;
 }
