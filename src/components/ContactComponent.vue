@@ -125,6 +125,7 @@ onMounted(fetchMarvelCharacters);
 </template>
 
 <style>
+/* Main container styles */
 .main {
   background-color: #191129;
   display: flex;
@@ -141,7 +142,7 @@ onMounted(fetchMarvelCharacters);
   align-items: center;
   gap: 4rem;
 }
-
+/* Form styles */
 .form {
   display: flex;
   flex-direction: column;
@@ -156,7 +157,7 @@ onMounted(fetchMarvelCharacters);
   text-align: left;
 }
 
-/* Estilos de los inputs y textarea */
+/* Input and textarea styles */
 .form__group {
   display: flex;
   flex-direction: column;
@@ -186,7 +187,7 @@ onMounted(fetchMarvelCharacters);
   resize: none;
 }
 
-/* Contenedor de personajes */
+/* Character display container */
 .timeline {
   display: flex;
   flex-direction: column;
@@ -232,5 +233,60 @@ onMounted(fetchMarvelCharacters);
   margin-top: 0.1rem;
   margin-bottom: 2rem;
   text-align: left;
+}
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .main__container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .timeline {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .form {
+    width: 90%;
+    align-items: center;
+  }
+
+  .form__input, .form__textarea {
+    max-width: 100%;
+  }
+
+  .timeline__characters {
+    width: 90%;
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main {
+    height: auto;
+    padding: 2rem 0;
+    
+  }
+
+  .form__title {
+    font-size: 1.5rem;
+  }
+
+  .form_subtitle {
+    font-size: 20px;
+  }
+
+  .timeline__character-card {
+    width: 100%;
+    height: auto;
+  }
+
+  .timeline__character-image {
+    width: 100%;
+    height: auto;
+  }
 }
 </style>
