@@ -100,6 +100,55 @@ input[type='radio']{
 .marvel-quiz__dialog-button{
     display: block;
 }
+
+@media (max-width: 1600px) {
+  .character-image {
+    width: 8rem;
+    height: 8rem;
+  }
+  .quiz__label {
+      width: 4rem;
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      align-content: center;
+      flex-wrap: wrap;
+      border-radius: 20%;
+      margin: 3rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .quiz__title {
+    width: 100%;
+  }
+  .quiz__image {
+    display: none;
+  }
+  .quiz__question {
+    width: 100%;
+  }
+}
+
+@media  (max-width: 450px) {
+  .quiz {
+    height: 200%;
+  }
+  .options{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4.15rem;
+  }
+  .quiz__label {
+    color: white;
+    height: 5rem;
+  }
+  .quiz__question-text {
+    font-size: 1.5rem;
+    margin-left: 2rem;
+  }
+}
 </style>
 
 <template>

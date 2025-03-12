@@ -1,5 +1,5 @@
 <style scoped>
-    .score {
+    .quiz-view__scoreboard {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -8,29 +8,60 @@
         z-index: -10;
         transition: 1s;
     }
-    .button{
+    .quiz-view__button-container {
         position: absolute;
         bottom: 10rem;
-        left: 7rem;
+        left: 12rem;
         color: rgb(206, 178, 21);
         font-size: 1.5rem;
         text-align: center;
         z-index: 11;
     }
-    .button img{
-        width: 4rem;
+    .quiz-view__button-image {
+        width: 5rem;
         cursor: pointer;
+    }
+    @media (max-width: 1600px) {
+        .quiz-view__quiz{
+            overflow: hidden    ;
+        }
+        .quiz-view__button-container {
+            bottom: 11rem;
+            left: 2rem;
+            font-size: 1.5rem;
+            z-index: 11;
+        }
+        .quiz-view__button-text{
+            margin: 0;
+        }
+        .quiz-view__button-image {
+            width: 4rem;
+        }
+    }
+    @media  (max-width: 700px) {
+        .quiz-view__button-text{
+            display: none;
+        }
     }
 </style>
 
 <template>
-    <div>
+    <div class="quiz-view">
         <QuizComponent 
-        class="quiz"/>
-        <ScoreBoard ref="scoreBoardRef" class="score" :style="scoreCSS"/>
-        <div class="button">
-            <img src="@/assets/img/marvelButton.png" alt="Marvel X-men Button" @click="toggleScores">
-            <p>See scores</p>
+        class="quiz-view__quiz"/>
+        <ScoreBoard 
+            ref="scoreBoardRef" 
+            class="quiz-view__scoreboard" 
+            :style="scoreCSS"
+        />
+        <div class="quiz-view__button-container">
+            <img 
+                src="@/assets/img/marvelButton.png" 
+                alt="Marvel X-men Button" 
+                @click="toggleScores"
+                class="quiz-view__button-image"
+            >
+            <p class="quiz-view__button-text">See scores</p>
         </div>
     </div>
 </template>

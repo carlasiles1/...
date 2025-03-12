@@ -29,10 +29,9 @@
 }
 
 .scoreboard__item {
-  margin: 1rem 3rem 1rem 0;
+  margin: 1rem auto;
   width: 21rem;
   color: wheat;
-  font-size: 1.8rem;
 }
 
 .scoreboard__item::marker {
@@ -47,7 +46,7 @@
 }
 
 .scoreboard__item--last {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   width: 50%;
   margin: 1rem auto;
 }
@@ -57,6 +56,51 @@
   right: 0;
   top: 10%;
   width: 33rem;
+}
+
+@media  (max-width: 1600px) {
+  .scoreboard__shield {
+    right: -10rem;
+  }
+  .scoreboard__item {
+    font-size: 1.5rem;
+  }
+  .scoreboard__item--first {
+    font-size: 2rem;
+  }
+}
+@media  (max-width: 1200px) {
+  .scoreboard__main{
+    height: 45rem;
+  }
+}
+@media  (max-width: 700px) {
+  .scoreboard__main{
+    height: 46rem;
+  }
+  .scoreboard__shield {
+    width: 20rem;
+    right: -8rem;
+  }
+}
+@media  (max-width: 450px) {
+  .scoreboard__main{
+    margin-top: 4rem;
+  }
+  .scoreboard__item {
+    font-size: 1rem;
+  }
+  .scoreboard__item--first {
+    font-size: 1.5rem;
+    margin-left: 0rem;
+  }
+  .scoreboard__shield {
+    width: 15rem;
+    top: 35%;
+  }
+  .scoreboard {
+    height: 180%;
+  }
 }
 </style>
 
@@ -101,7 +145,7 @@
 </template>
 
 <script setup>
-import {ref, onMounted, computed} from 'vue'
+import {ref, onMounted, computed, defineExpose} from 'vue'
 
 const scores = ref([])
 
@@ -114,6 +158,27 @@ const loadScores = async () => {
     const response = await fetch('http://localhost:3000/scores')
     const data = await response.json()  
     scores.value = data
+
+    if (data.length > 10){
+      const topScores = data
+      .sort((a, b)=>{
+        if (b.score === a.score){
+          return new Date(b.date) - new Date(a.date)
+        }
+        return b.score - a.score;
+      })
+      .slice(0, 10);
+      
+      await fetch('http://localhost:3000/scores', {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(topScores)
+      });
+
+      scores.value = topScores;
+    }
   } catch (error) {
     console.error('Error al cargar datos:', error)
   }
