@@ -11,14 +11,14 @@
     .quiz-view__button-container {
         position: absolute;
         bottom: 10rem;
-        left: 12rem;
+        left: 6rem;
         color: rgb(206, 178, 21);
         font-size: 1.5rem;
         text-align: center;
         z-index: 11;
     }
     .quiz-view__button-image {
-        width: 5rem;
+        width: 4rem;
         cursor: pointer;
     }
     @media (max-width: 1600px) {
