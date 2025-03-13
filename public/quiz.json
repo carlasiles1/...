@@ -64,7 +64,7 @@
             "id": 12,
             "question": "Who is the ruler of Atlantis?",
             "answer": "Namor",
-            "options": ["Namor", "Poseidon", "Loa", "Triton"]
+            "options": ["Namor", "Zeus", "Loa", "Triton"]
         },
         {
             "id": 13,
@@ -82,7 +82,7 @@
             "id": 15,
             "question": "Which character can control fire?",
             "answer": "Human Torch",
-            "options": ["Human Torch", "Firestar", "Blink", "Jean Grey"]
+            "options": ["Human Torch", "Firestar", "Pyro", "Jean Grey"]
         },
         {
             "id": 16,
@@ -160,13 +160,13 @@
             "id": 28,
             "question": "Who is the alien symbiote that bonds with Eddie Brock?",
             "answer": "Venom",
-            "options": ["Venom ", "Carnage", "Toxin", "Groot"]
+            "options": ["Venom", "Carnage", "Toxin", "Groot"]
         },
         {
             "id": 29,
             "question": "Which character is known as the 'Man Without Fear'?",
             "answer": "Daredevil",
-            "options": ["Daredevil", "Blade", "Hawkeye", "Black Panther"]
+            "options": ["Daredevil", "Deadpool", "Hawkeye", "Black Panther"]
         },
         {
             "id": 30,
@@ -190,7 +190,7 @@
             "id": 33,
             "question": "Who can shoot energy blasts from his eyes?",
             "answer": "Cyclops",
-            "options": ["Starfox", "Blindspot", "Optic", "Cyclops"]
+            "options": ["Starfox", "Hawkeye", "Morbius", "Cyclops"]
         },
         {
             "id": 34,
@@ -238,12 +238,12 @@
             "id": 43,
             "question": "Who is the God of Mischief?",
             "answer": "Loki",
-            "options": ["Thor", "Loki", "Odin", "Colossus"]
+            "options": ["Thor", "Loki", "Odin", "Medusa"]
         },
         {
             "id": 44,
             "question": "Which character is the King of the Dead?",
-            "answer": "Black Panther",
+            "answer": "Ghost Rider",
             "options": ["Ghost Rider", "Moon Knight", "Black Panther", "Blade"]
         },
         {
@@ -287,12 +287,6 @@
             "question": "Which character can create multiple copies of himself?",
             "answer": "Multiple Man",
             "options": ["Chameleon", "Multiple Man", "Mysterio", "Mystique"]
-        },
-        {
-            "id": 52,
-            "question": "Which character is known as the 'Master of Kung Fu'?",
-            "answer": "Shang    Chi",
-            "options": ["Elektra", "Deadpool", "ShangChi", "Ares"]
         },
         {
             "id": 53,

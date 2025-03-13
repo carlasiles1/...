@@ -16,127 +16,100 @@ class="section-timeline__button section-timeline__button--left">⬅
 class="section-timeline__button section-timeline__button--right">➡
 </button>
     </div>
-    <TimelineMarvel />
+    <TimeLineMarvel  />
     
   </main>
 </template>
 
 <script setup>
-import { ref,computed, onMounted} from "vue";
+import { ref } from "vue";
 import gsap from "gsap";
-import MarvelHome from "@/components/MarvelHome.vue";
-import TimelineMarvel from "@/components/TimeLineMarvel.vue";
-
-const mainWidth = ref("100%");
-
-// Computed para ajustar el ancho
-const adjustMainWidth = computed(() => {
-  return mainWidth.value;
-});
-
-// Ajustar el ancho en base a la pantalla
-onMounted(() => {
-  window.addEventListener("resize", () => {
-    mainWidth.value = window.innerWidth < 768 ? "100%" : "100%";
-  });
-
-
-});
-  
+import MarvelHome from "../components/MarvelHome.vue";
+import TimeLineMarvel from "../components/TimeLineMarvel.vue";
+ 
+const scrollContainer = ref(null); 
 const scrolling = ref(false);
 const scrollAmount = 800; 
 
 const scroll = (direction) => {
-  const container = document.querySelector("main");
+const container = scrollContainer.value;
   if (!container || !scrolling.value) return;
 
-  gsap.to(container, {
-    scrollLeft: container.scrollLeft + direction * scrollAmount,
-    duration: 0.5,
-    ease: "power2.out",
-    // smooth: 1,
-    onComplete: () => {
-      if (scrolling.value) scroll(direction); // Scroll continues if pressed
-    },
-  });
+gsap.to(container, {
+  scrollLeft: container.scrollLeft + direction * scrollAmount,
+  duration: 0.5,
+  ease: "power2.out",
+  onComplete: () => {
+    if (scrolling.value) scroll(direction); // Scroll continues if pressed
+  },
+});
 };
 
 const startScroll = (direction) => {
-  if (!scrolling.value) {
-    scrolling.value = true;
-    scroll(direction);
-  }
+if (!scrolling.value) {
+  scrolling.value = true;
+  scroll(direction);
+}
 };
 
 const stopScroll = () => {
-  scrolling.value = false;
+scrolling.value = false;
 };
 
 document.addEventListener("keydown", (e) => {
-  if (e.key === "ArrowRight") startScroll(1);
-  if (e.key === "ArrowLeft") startScroll(-1);
+if (e.key === "ArrowRight") startScroll(1);
+if (e.key === "ArrowLeft") startScroll(-1);
 });
 document.addEventListener("keyup", stopScroll);
 
+</script>
 
+<style scoped>
+main {
+  display: flex;
+  overflow-x: scroll; /* Allows horizontal scroll */
+  overflow-y: hidden; 
+  height: 100vh; 
+  margin: 0; 
+}
+.marvel-home {
+  min-width: 100vw; 
+}
 
+.section-timeline__button {
+background: none;
+color: rgb(212, 212, 212);
+border: 0.05rem solid white;
+border-radius: 50%;
+padding: 1rem;
+padding-inline: 1.2rem;
+font-size: 1.5rem;
+cursor: pointer;
+margin-inline: 3rem;
 
-  </script>
-  
-  <style scoped>
-  main {
-    display: flex;
-    overflow-x: auto; /* Permite scroll horizontal */
-    overflow-y: hidden; 
-    white-space: nowrap; /* Evita saltos de línea */
-    height: 100vh; /* Ocupa toda la altura de la ventana */
-    margin: 0; /* Margen derecho para espacio adicional */
-  }
-  .marvel-home {
-    min-width: 100vw; /* Asegura que ocupe al menos el ancho completo de la pantalla */
-  }
-
-  .section-timeline__button {
-  background: none;
-  color: rgb(212, 212, 212);
-  border: 0.05rem solid white;
-  border-radius: 50%;
-  padding: 1rem;
-  padding-inline: 1.2rem;
-  font-size: 1.5rem;
-  cursor: pointer;
-  margin-inline: 3rem;
-
-  
 }
 
 .section-timeline__button:hover{
-  background-color: rgba(255, 253, 253, 0.351);
-  color: rgb(25, 25, 36);
+background-color: rgba(255, 253, 253, 0.351);
+color: rgb(25, 25, 36);
 }
 
-
- .section-timeline__buttons {
-  position: fixed;
-  bottom: 11rem;
-  right: 12rem;
-  align-self:first baseline;
-  z-index: 12;
-  
+.section-timeline__buttons {
+position: fixed;
+bottom: 11rem;
+right: 12rem;
+align-self:first baseline;
+z-index: 12;
 
 }  
 
 @media only screen and (max-width: 1000px) {
-  .section-timeline__buttons {
-  
-  bottom: 10rem;
-  right: 20%; 
-  align-self: center;
-  
+.section-timeline__buttons {
+
+bottom: 10rem;
+right: 20%; 
+align-self: center;
 
 }  
-
-
-
 }
-  </style>
+</style>
