@@ -75,11 +75,8 @@ const fetchMarvelComics = async () => {
   }
 };
 
-
 onMounted(() => {
   fetchMarvelComics();
-
-
 });
 
 // Watch for changes in selectedEvent and call fetchMarvelComics when it changes
@@ -87,15 +84,9 @@ watch(selectedEvent, async() => {
   await fetchMarvelComics();
 });
 
-const changeEvent = (event) => {
-  event.preventDefault(); // Previene el scroll no deseado
-  selectedEvent.value = event.target.value;
-};
-
-
 // New method to handle comic click and fetch detailed information
 const goToWiki = async (comic,event) => {
-  event?.preventDefault(); // Si se llama desde un evento de click, previene desplazamientos
+  event?.preventDefault(); // Prevent displacement 
   selectedComic.value = comic;
   loading.value = true;
   try {
@@ -143,7 +134,7 @@ const closePopup = () => {
           <!-- "event" represents the key (which is the event name) and "id" the value (event ID) in each iteration -->
         </select>
       </div>
-      <div v-if="loading">Loading...</div>
+      <div v-if="loading" class="loading_class">Loading...</div>
       <div v-else-if="marvelComics.length === 0">Not found</div><!-- This line displays "Not found" if the marvelComics array is empty -->
       <div v-else class="section-timeline__comics">
         <div v-for="comic in marvelComics" :key="comic.id" class="comic-card" @click="goToWiki(comic, $event)">
@@ -192,10 +183,6 @@ const closePopup = () => {
   background-color: black;
   width: auto; /* Evita fijar un ancho mínimo */
  
-
-  
-  
-
 }
 
 .section-eventSelector {
@@ -378,5 +365,25 @@ const closePopup = () => {
   background-color: rgba(0, 0, 0, 0.7);
   border-radius: 0.5rem;
 }
+.loading_class{
+  color:rgb(255, 255, 255);
+  text-align: center;
+  width: 20vw;
+  padding-top: 10rem;
+  font-size: 3.5rem;
+  padding-inline: 1rem;
+  animation: shadow-dance 2s infinite;
+
+}
+   
+@keyframes shadow-dance {
+    0%, 100% {
+      padding-inline: 1rem;
+    }
+    50% {
+      padding-inline: 0.05rem;
+    }
+}
+
 
 </style>

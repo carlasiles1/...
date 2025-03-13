@@ -32,6 +32,7 @@
   margin: 1rem auto;
   width: 21rem;
   color: wheat;
+  font-size: 1.9rem;
 }
 
 .scoreboard__item::marker {
@@ -145,7 +146,7 @@
 </template>
 
 <script setup>
-import {ref, onMounted, computed, defineExpose} from 'vue'
+import {ref, onMounted, computed} from 'vue'
 
 const scores = ref([])
 

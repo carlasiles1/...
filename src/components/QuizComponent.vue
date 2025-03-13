@@ -210,24 +210,35 @@ import {ref, computed, onMounted, watch} from 'vue'
 import axios from "axios";
 import md5 from "md5";
 
+//ref for the question display
 const quiz = ref({})
+//Ref for randomize the questions
 const randomQuestions = ref([])
+//Ref for show the actual question and its option
 const currentQuestion = ref(0)
+//Ref for save the answered questions
 const userAnswers = ref({})
+//Ref for display the score
 const score = ref(0)
+//The img of the iron-man hand pointer
 const source = ref('')
 
+//Ref for show the question page
 const page = ref('')
 page.value = 1
 
+//Ref for showing the final dialog
 const dialogRef = ref(null)
+//ref for put and save the player's name
 const playerName = ref('')
+//ref for display a message after save your name
 const savedMessage = ref('')
 
-//Cuando sale dos veces el mismo nombre en una respuesta seguido, se queda printado en verde
-
+//a set that only admits one item type (question), per array
 const selected = new Set()
 
+
+//Fetch for get the questions from the json
 const fetchQuiz = async () => {
         try {
             const response = await fetch('/quiz.json')
@@ -239,7 +250,7 @@ const fetchQuiz = async () => {
         } catch (error) {
             console.error('Error loading data', error)
         }
-
+        //Creating the pointer
         source.value = new URL ('@/assets/img/ironPointer.png', import.meta.url).href
 
         getRandomQuestions()
@@ -250,47 +261,53 @@ onMounted(async () => {
 })
 
 const getRandomQuestions = ()=>{
+  //total question length
     const total = quiz.value.questions.length
 
+    //set the set size in 15
     while(selected.size < 15){
         const randomIndex = Math.floor(Math.random() * total)
         selected.add(randomIndex)
     }
+    //Mix the 15 random numbers with the question id to get an array of 15 questions
     randomQuestions.value = Array.from(selected).map(index => quiz.value.questions[index])
 }
-
+//Next page function and much more
 const next = () => {
     const correct = document.querySelector(`label:has(input[value="${randomQuestions.value[currentQuestion.value].answer}"])`)
+    //The correct answer highlighted in green
     correct.style = 'background-color: green';
 
-    // Corregir el selector para obtener el input seleccionado
+    // Queryselector in :checked for getting the chossen answer
     const response = document.querySelector(`input[name="choseOption"]:checked`)
     if (response) {
         userAnswers.value[currentQuestion.value] = response.value
-        
+        //If it's correct, +1 point
         if (response.value === randomQuestions.value[currentQuestion.value].answer) {
             score.value++
         }
     }
-
+    //time out for let the user see the correct answer
     setTimeout(() => {
         if (currentQuestion.value < randomQuestions.value.length - 1) {
+            //next question & reset
             currentQuestion.value++
             page.value = currentQuestion.value + 1
             correct.style = '';
+        //If it's the llas question, show the modal for put your name
         } else {
             finalScore()
         }
     }, 1000)
 }
-
+//previous question
 const prev = () => {
     if (currentQuestion.value > 0) {
         currentQuestion.value--
         page.value = currentQuestion.value + 1
     }
 }
-
+//show in the dialog the final score
 const finalScore = () => {
   if (dialogRef.value) {
     dialogRef.value.showModal()
@@ -302,7 +319,7 @@ const closeDialog = () => {
     dialogRef.value.close()
   }
 }
-
+//Show msg if no name and save user data
 const saveScore = async () => {
   if (!playerName.value.trim()) {
     savedMessage.value = 'Type your winner name!!'
@@ -310,16 +327,17 @@ const saveScore = async () => {
   }
 
   try {
+    //Formatting date 99/12
     const date = new Date()
     const formattedDate = `${date.getFullYear()}/${String(date.getMonth() + 1).padStart(2, '0')}`
-    
+    //saving the user data
     const newScore = {
       name: playerName.value.trim(),
       score: score.value,
       date: formattedDate
     }
     
-    // Agregamos mejor manejo de errores y logging
+    // Fetch from the web to POST in a json via json server
     const response = await fetch('http://localhost:3000/scores', {
       method: 'POST',
       headers: {
@@ -348,20 +366,20 @@ const saveScore = async () => {
     savedMessage.value = `Error saving score: ${error.message}`
   }
 }
-//Uso de la API
-
+//API use for character images
+//Ref for each character stored
 const marvelCharacter = ref([])
 
 const marvelApiPublicKey = 'c6505251612e731238b4d32531d6a998';
 const marvelApiPrivateKey = 'ee80321c4497db2e446a64fb6b78d032066c80e1';
 
-// Modificar la función fetchMarvelComics para que devuelva el personaje
+// Fetch for each question
 const fetchMarvelComics = async (characterName) => {
   const timestamp = new Date().getTime();
   const hash = md5(timestamp + marvelApiPrivateKey + marvelApiPublicKey);
 
   try {
-
+    //Name clear
     const searchName = characterName
       .toLowerCase()
       .replace(/-/g, ' ')
@@ -377,7 +395,7 @@ const fetchMarvelComics = async (characterName) => {
         limit: 1
       },
     })
-    
+    //Matching character name with character apis name
     if (response.data?.data?.results?.[0]) {
       const character = response.data.data.results[0];
       return {
@@ -393,44 +411,42 @@ const fetchMarvelComics = async (characterName) => {
 };
 onMounted(fetchMarvelComics)
 
-// Añadir función para cargar los personajes de la pregunta actual
+// Function to load character
 const loadCurrentQuestionCharacters = async () => {
   if (!randomQuestions.value[currentQuestion.value]) return;
   
-  marvelCharacter.value = []; // Limpiar personajes anteriores
+  marvelCharacter.value = []; // Clear last characters
   const options = randomQuestions.value[currentQuestion.value].options;
   
-  // Cargar los personajes de todas las opciones
+  // Load each  characters
   const characters = await Promise.all(
     options.map(option => fetchMarvelComics(option))
   );
   
-  // Filtrar null y añadir los personajes encontrados
+  //filter characters 
   marvelCharacter.value = characters.filter(char => char !== null);
 };
 
-// Modificar el watcher para currentQuestion
 watch(currentQuestion, async () => {
   await loadCurrentQuestionCharacters();
 });
-
-// Añade esta función después de la declaración de marvelCharacter
+//Normalize the  character name for a clear search
 const matchingCharacter = computed(() => {
   return (option) => {
-    // Normalizar el nombre de la opción
+
     const normalizedOption = option.toLowerCase()
-      .replace(/-/g, ' ')  // Reemplazar guiones por espacios
-      .replace(/\s+/g, ' ') // Normalizar espacios múltiples
+      .replace(/-/g, ' ')
+      .replace(/\s+/g, ' ')
       .trim();
 
     return marvelCharacter.value.find(character => {
-      // Normalizar el nombre del personaje de la API
+      
       const normalizedCharName = character.name.toLowerCase()
         .replace(/-/g, ' ')
         .replace(/\s+/g, ' ')
         .trim();
 
-      // Comprobar si los nombres coinciden o si uno contiene al otro
+      // Comprove if the  characters name matches
       return normalizedCharName === normalizedOption ||
              normalizedCharName.includes(normalizedOption) ||
              normalizedOption.includes(normalizedCharName);

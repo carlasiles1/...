@@ -19,12 +19,6 @@
             "options": ["Storm", "Doctor Strange", "Wolverine", "Cyclops"]
         },
         {
-            "id": 4,
-            "question": "Who is the web-slinging superhero from New York City?",
-            "answer": "Spider Man",
-            "options": ["Moon Knight", "Blade", "Spider-Man", "Daredevil"]
-        },
-        {
             "id": 5,
             "question": "Which character is known for her agility and stealth abilities?",
             "answer": "Black Widow",
@@ -88,7 +82,7 @@
             "id": 15,
             "question": "Which character can control fire?",
             "answer": "Human Torch",
-            "options": ["Human Torch", "Firestar", "Pyro", "Jean Grey"]
+            "options": ["Human Torch", "Firestar", "Blink", "Jean Grey"]
         },
         {
             "id": 16,
@@ -172,7 +166,7 @@
             "id": 29,
             "question": "Which character is known as the 'Man Without Fear'?",
             "answer": "Daredevil",
-            "options": ["Daredevil", "Spider-Man", "Hawkeye", "Black Panther"]
+            "options": ["Daredevil", "Blade", "Hawkeye", "Black Panther"]
         },
         {
             "id": 30,
@@ -205,12 +199,6 @@
             "options": ["Doctor Strange", "Professor X", "Magneto", "Thanos"]
         },
         {
-            "id": 35,
-            "question": "Which character is Tony Stark's best friend and War Machine?",
-            "answer": "James Rhodes",
-            "options": ["Happy Hogan", "Nick Fury", "Phil Coulson", "James Rhodes"]
-        },
-        {
             "id": 36,
             "question": "Who is the queen of the Inhumans?",
             "answer": "Medusa",
@@ -227,12 +215,6 @@
             "question": "Who can travel through time and space?",
             "answer": "Doctor Strange",
             "options": ["Thanos", "Doctor Strange", "Moon Knight", "Red Skull"]
-        },
-        {
-            "id": 39,
-            "question": "Which character can shrink to the size of an ant?",
-            "answer": "Ant-Man",
-            "options": ["Wasp", "Spider-Man", "Ant-Man", "Black Panther"]
         },
         {
             "id": 40,
@@ -256,7 +238,7 @@
             "id": 43,
             "question": "Who is the God of Mischief?",
             "answer": "Loki",
-            "options": ["Thor", "Loki", "Odin", "Hades"]
+            "options": ["Thor", "Loki", "Odin", "Colossus"]
         },
         {
             "id": 44,
@@ -309,8 +291,8 @@
         {
             "id": 52,
             "question": "Which character is known as the 'Master of Kung Fu'?",
-            "answer": "Shang-Chi",
-            "options": ["Elektra", "Deadpool", "Shang-Chi", "Ares"]
+            "answer": "Shang    Chi",
+            "options": ["Elektra", "Deadpool", "ShangChi", "Ares"]
         },
         {
             "id": 53,
